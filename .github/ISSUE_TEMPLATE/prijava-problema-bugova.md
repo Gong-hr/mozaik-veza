@@ -26,7 +26,7 @@ Ako je primjenjivo, dodajte screenshot na kojem je vidljivo u čemu je problem.
  - Verzija [npr. 22]
 
 **Pametni telefon/tablet (molimo upišite sljedeće informacije):**
- - Uređaj: [npr.. iPhone6]
+ - Uređaj: [npr. iPhone6]
  - Operativni sustav: [npr. iOS8.1]
  - Preglednik [npr. stock browser, safari]
  - Verzija [npr. 22]
