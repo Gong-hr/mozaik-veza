@@ -1,0 +1,940 @@
+@import "custom_bootstrap.scss";
+
+$sizes: (
+        25: 25%
+) !default;
+
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/mixins";
+
+//@import "../node_modules/bootstrap/scss/utilities/_sizing.scss";
+
+@each $prop, $abbrev in (width: w, height: h) {
+    @each $size, $length in $sizes {
+        .#{$abbrev}-#{$size} {
+            #{$prop}: $length !important;
+        }
+    }
+}
+
+input {
+    height: 30px;
+    color: green;
+}
+
+.nesto h2 {
+    //@extend .w-25;
+    color: red;
+    font-weight: normal;
+}
+
+.Entity-container {
+    padding-top: 72px;
+    padding-bottom: 72px;
+    @include media-breakpoint-down(sm) {
+        padding-top: 36px;
+        padding-bottom: 36px;
+    }
+
+    .Entity-left-column {
+        @include media-breakpoint-down(lg) {
+            padding-left: 0;
+        }
+        @include media-breakpoint-down(sm) {
+            padding-left: 16px;
+        }
+        @include media-breakpoint-up(xl) {
+            padding-right: 32px;
+        }
+        text-align: left;
+        h1 {
+            @include Text-Style-3;
+            @include media-breakpoint-down(sm) {
+                font-size: 24px;
+                //margin-top: -48px; //fix, search field leaves empty space
+            }
+        }
+        .entityName {
+            & > div > div {
+                display: inline;
+            }
+            button, button:active, button:focus, button:active:focus {
+                color: $light-grey;
+                font-size: 16px;
+                padding: 0;
+                position: relative;
+                border: none;
+                background: none;
+                box-shadow: none;
+                outline: none;
+                left: -4px;
+                @include media-breakpoint-down(sm) {
+                    left: -2px;
+                    top: -2px;
+                }
+            }
+        }
+        h2 {
+            @include Text-Style-6-left-80-bold;
+            text-transform: uppercase;
+            margin-top: 32px;
+            @include media-breakpoint-down(sm) {
+                font-size: 18px;
+            }
+        }
+        .Entity-left-column-subtitle {
+            display: inline-block;
+            @include Text-Style-6-left-60;
+            @include media-breakpoint-down(sm) {
+                width: 100%;
+                text-align: left !important;
+                font-size: 18px;
+            }
+            &.Entity-left-column-subtitle-red {
+                color: $lipstick;
+                background-color: transparent;
+                border: none !important;
+                margin-left: 24px;
+                padding: 0;
+                position: relative;
+                top: -4px;
+                .font-awesome-holder {
+                    color: $black-60;
+                }
+                .font-awesome-holder.star-sunflower {
+                    color: $sunflower-yellow;
+                }
+                &:hover, &:active, &:focus, &:active:focus {
+                    color: $lipstick !important;
+                    background-color: transparent !important;
+                    border: none !important;
+                    box-shadow: none !important;
+                    outline: none !important;
+                }
+                @include media-breakpoint-down(sm) {
+                    width: 100%;
+                    top: 0;
+                    margin-left: 0;
+                }
+            }
+            .font-awesome-holder {
+                font-size: 24px;
+                margin-right: 12px;
+                @include media-breakpoint-down(sm) {
+                    width: 16px;
+                    text-align: center;
+                    display: block;
+                    float: left;
+                    font-size: 18px;
+                }
+            }
+            .font-awesome-holder.star-sunflower {
+                @include media-breakpoint-down(sm) {
+                    top: 0 !important;
+                    margin-right: 9px;
+                }
+            }
+        }
+        .Entity-left-column-info-div {
+            @include Text-Style-6-left-60;
+            margin-top: 12px;
+            min-height: 28px;
+            margin-left: 32px;
+            @include media-breakpoint-down(sm) {
+                font-size: 18px;
+                margin-top: 0;
+            }
+            .font-awesome-holder {
+                color: $light-grey;
+                font-size: 16px;
+                position: relative;
+                bottom: 1px;
+                left: 6px;
+            }
+            button {
+                border: none;
+                background: none;
+                padding: 0 0 4px 0px;
+            }
+            button:active, button:focus, button:active:focus {
+                border: none;
+                background: none;
+                box-shadow: none;
+                outline: none;
+            }
+        }
+        .Entity-left-column-connection-circles {
+            padding-top: 16px;
+            padding-bottom: 16px;
+            border: solid 1px $light-grey;
+            height: 280px;
+            position: relative; //switching places with .numberConnections
+            top: 97px;
+            @include media-breakpoint-up(sm) {
+                height: 290px;
+            }
+            @include media-breakpoint-up(xl) {
+                height: 360px;
+            }
+            .CircleDiv {
+                width: 20%;
+                float: left;
+            }
+            .CircleDiv-circle {
+                height: 80px;
+                @include media-breakpoint-up(md) {
+                    height: 100px;
+                }
+                @include media-breakpoint-up(lg) {
+                    height: 120px;
+                }
+                @include media-breakpoint-up(xl) {
+                    height: 160px;
+                }
+                display: flex;
+                align-items: center;
+            }
+            .CircleDiv-circle div.circle {
+                border-radius: 50%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .CircleDiv-number {
+                @include Text-Style-4-center;
+                line-height: 1.1;
+            }
+            .CircleDiv-text {
+                @include Text-Style-7-80-center;
+                line-height: 1.1;
+            }
+            .Entity-left-column-connection-circles-buttons {
+                margin-right: auto;
+                margin-left: auto;
+                width: 200px;
+                button {
+                    font-size: 18px;
+                    margin: 16px auto;
+                    width: 96px;
+                    height: 40px;
+                    border: none;
+                    color: $lipstick;
+                    cursor: pointer;
+                    background-color: transparent;
+                }
+                button:focus {
+                    outline: none;
+                }
+                button.active {
+                    margin: 16px auto;
+                    width: 96px;
+                    height: 40px;
+                    border-radius: 2px;
+                    border: solid 1px $light-grey;
+                    color: $black-40;
+                    cursor: default;
+                }
+                button.showBars {
+                    margin-left: 8px;
+                }
+            }
+            .Entity-left-column-connection-circles-xyplot {
+                width: 264px;
+                @include media-breakpoint-up(md) {
+                    width: 460px;
+                }
+                @include media-breakpoint-up(lg) {
+                    width: 560px;
+                }
+                @include media-breakpoint-up(xl) {
+                    width: 800px;
+                }
+                overflow-x: auto;
+                overflow-y: hidden;
+                margin-right: auto;
+                margin-left: auto;
+            }
+        }
+        .Entity-left-column-start-visualisation {
+            position: relative;
+            top: 97px;
+            height: 48px;
+            background-color: $light-grey;
+            a, a:hover, a:focus, a:active {
+                @include Text-Style-bold-60;
+                text-align: center;
+            }
+            padding-top: 12px;
+        }
+        .Entity-left-column-Connections-title {
+            margin-bottom: 48px;
+            @include media-breakpoint-down(lg) {
+                margin-bottom: 24px;
+            }
+            position: relative;
+            //top: 100px;
+            .Entity-left-column-filter {
+                float: right;
+            }
+        }
+    }
+    .Entity-right-column {
+        border-left: solid 1px $light-grey;
+        @include media-breakpoint-down(md) {
+            border-left: none;
+        }
+        .Entity-right-column-inner-div-no-border {
+            max-width: 384px;
+            border: none;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 24px;
+            margin-bottom: 24px;
+            @include media-breakpoint-down(md) {
+                margin-left: unset;
+                margin-right: unset;
+                max-width: unset;
+            }
+        }
+        .Entity-right-column-related {
+            text-align: left;
+            h1 {
+                @include Text-Style-bold;
+                line-height: 32px;
+                margin-bottom: 24px;
+                text-align: left;
+                text-transform: uppercase;
+            }
+            span {
+                font-size: 32px;
+                line-height: 1;
+                color: $sunflower-yellow;
+            }
+            & > div {
+                margin-left: -8px;
+                margin-right: -30px;
+            }
+            &.Entity-right-column-related span {
+                color: $black-60;
+                @include media-breakpoint-up(sm) {
+                    display: inline-block;
+                }
+                @include media-breakpoint-up(md) {
+                    display: none;
+                }
+                @include media-breakpoint-up(lg) {
+                    display: inline-block;
+                }
+            }
+            .Entity-right-column-related-entity {
+                height: 64px;
+                padding: 8px;
+                margin-bottom: 12px;
+                &:hover {
+                    background-color: $light-grey-five;
+                }
+                a {
+                    height: inherit;
+                    display: block;
+                    img {
+                        height: 48px;
+                        width: 48px;
+                        float: left;
+                    }
+                    & > div {
+                        height: 48px;
+                        float: left;
+                        //margin-left: 12px;
+                        max-width: calc(100% - 50px);
+                        /*@include media-breakpoint-down(md) {
+                            max-width: calc(100% - 44px);
+                        }*/
+                        p {
+                            display: block;
+                            white-space: nowrap;
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+                            max-height: 48px;
+                        }
+                        &.Entity-right-column-related-entity-icon {
+                            padding-top: 6px;
+                            margin-left: 0;
+                            width: 48px;
+                            border-radius: 2px;
+                            background-color: $light-grey;
+                            text-align: center;
+                            color: $black-60;
+                            font-size: 24px;
+                        }
+                    }
+                    .Entity-right-column-related-entity-name {
+                        color: $lipstick;
+                        font-weight: bold;
+                        margin-bottom: 0;
+                        margin-left: 12px;
+                    }
+                    .Entity-right-column-related-entity-links {
+                        color: $black-40;
+                        margin-bottom: 0;
+                        margin-left: 12px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.Entity-left-column-info-more-div, .Entity-left-column-info-more-div:active, .Entity-left-column-info-more-div:hover, .Entity-left-column-info-more-div:focus, .Entity-left-column-info-more-div:focus:active {//Entity_left_column && Filter-Entity-right-details
+    @include Text-Style-6-left-60;
+    color: $lipstick;
+    margin-top: 18px;
+    button, button:focus, button:active, button:visited {
+        background-color: transparent !important;
+        border: none !important;
+        @include Text-Style-6-left-60;
+        color: $lipstick !important;
+        box-shadow: none !important;
+        @include media-breakpoint-down(sm) {
+            font-size: 18px;
+        }
+        .font-awesome-holder, .font-awesome-holder:active, .font-awesome-holder:focus, .font-awesome-holder:visited {
+            padding: 0;
+            color: $lipstick;
+            background-color: transparent;
+            border: none;
+            font-size: 14px;
+            margin-left: 6px;
+            box-shadow: none !important;
+        }
+    }
+}
+.Filter-Entity-right-details {
+    .Entity-left-column-info-more-div, .Entity-left-column-info-more-div:active, .Entity-left-column-info-more-div:hover, .Entity-left-column-info-more-div:focus, .Entity-left-column-info-more-div:focus:active {
+        button, button:focus, button:active, button:visited {
+            padding-left: 0;
+            font-size: 16px;
+        }
+    }
+}
+.bullet-dash {
+    display: inline-block;
+    width: 16px;
+    height: 2px;
+    margin-bottom: 6px;
+    margin-right: 12px;
+    background-color: $light-grey;
+    margin-left: -32px;
+}
+.pagination_container {
+    height: 48px;
+    @include Text-Style-7;
+    line-height: 1.4;
+    padding-left: 0;
+    margin-top: 48px;
+    li {
+        cursor: pointer;
+        margin: 0 3px;
+        float: left;
+        width: fit-content;//48px;
+        height: 48px;
+        border-radius: 2px;
+        border: solid 1px $light-grey;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-left: 0;
+        padding-right: 0;
+        min-width: 48px;
+        @include media-breakpoint-down(md) {
+            height: 36px;
+            min-width: 36px;
+        }
+        @include media-breakpoint-down(xs) {
+            height: 24px;
+            min-width: 24px;
+        }
+        &.active {
+            background-color: $light-grey;
+            height: 48px;
+            @include media-breakpoint-down(md) {
+                height: 36px;
+            }
+            @include media-breakpoint-down(xs) {
+                height: 24px;
+            }
+        }
+        &.disabled {
+            a, a:hover {
+                color: $black-20 !important;
+                cursor: no-drop;
+            }
+            background-color: $light-grey-five;
+        }
+        a, a:hover {
+            @include Text-Style-7;
+            color: $black-60 !important;
+            outline: none;
+            display: block;
+            width: 100%;
+            height: inherit;
+            line-height: 48px;
+            text-align: center;
+            padding-left: 6px;
+            padding-right: 6px;
+            @include media-breakpoint-down(md) {
+                line-height: 36px;
+            }
+            @include media-breakpoint-down(xs) {
+                line-height: 24px;
+                font-size: 16px;
+            }
+        }
+        li:hover a, a:hover{
+            text-decoration: none;
+            color: $lipstick !important;
+        }
+        &.break, &.break-me {
+            cursor: default;
+            border: none;
+            margin: 0;
+            &:hover a, a:hover{
+                cursor: default;
+                text-decoration: none;
+                color: $black-60 !important;
+            }
+        }
+        &.previous, &.next {
+            padding-left: 12px;
+            padding-right: 12px;
+            @include media-breakpoint-down(md) {
+                display: none;
+            }
+        }
+        &.previous.disabled, &.next.disabled {
+            display: none;
+        }
+        &:first-child {
+            margin-left: 0;
+        }
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+.visualization-Connections-empty {
+    text-align: left;
+    font-size: 18px;
+    color: $black-80;
+    border-bottom: 1px solid $black-40;
+    border-top: 1px solid $black-40;
+    padding: 20px;
+}
+.visualization-Connections {
+    top: 80px;
+    position: absolute;
+    bottom: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: 8px;
+    width: 100%;
+    @include media-breakpoint-up(md) {
+        left: 378px;
+        width: calc(100% - 380px);
+        //width: 390px;
+    }
+    @include media-breakpoint-up(lg) {
+        left: 390px;
+        width: calc(100% - 390px);
+        //width: 660px;
+    }
+    @include media-breakpoint-up(xl) {
+        //width: 900px;
+    }
+    @include media-breakpoint-down(sm) {
+        top: 0;
+        margin-top: 60px;
+        left: 0;
+        bottom: 120px;
+        //min-height: calc( 100% + 280px);
+    }
+}
+.Entity-Connections, .visualization-Connections {
+    .numberEntityConnections {
+        position: relative;
+        top: -440px;
+        @include media-breakpoint-down(lg) {
+            top: -340px;
+            & > .empty-row {
+                display: none;
+            }
+        }
+    }
+    .Entity-Connections-row {
+        min-height: 60px;
+        margin-bottom: 4px;
+        border-radius: 3px;
+        padding: 8px;
+        display: flex;
+        align-items: center;
+        min-width: 100%;
+        margin-left: -8px;
+        margin-right: -8px;
+        @include media-breakpoint-up(xl) {
+            min-width: 832px;
+            width: 832px;
+        }
+        &:hover {
+            background-color: $light-grey-five;
+        }
+        .col-12:first-child {
+            display: flex;
+            align-items: center;
+        }
+        .col-12 {
+            padding: 0;
+            .connection-type-abbr {
+                margin-left: 0;
+            }
+        }
+        .Entity-Connection-dates {
+            @include Text-Style-5-not-bold;
+            float: left;
+            margin-left: 8px;
+            min-width: 180px;
+            @media (min-width: 1400px) {
+                width: 200px;
+                min-height: 5px;
+            }
+            @media (min-width: 1024px) {
+                width: 180px;
+                min-height: 5px;
+            }
+        }
+        .Entity-Connection-position {
+            @include Text-Style-5-not-bold-40;
+        }
+        .Entity-Connection-entity {
+            @include Text-Style-5-not-bold-262626;
+        }
+        .Entity-Connection-arrow {
+            margin: 0 8px;
+        }
+    }
+    a:hover {
+        text-decoration: none;
+    }
+    .Entity-Connection-timeline {
+        position: relative;
+        float: left;
+        margin-left: 4px;
+        top: 4px;
+        height: 20px;
+        .Entity-Connection-timeline-gray {
+            position: absolute;
+            left: 0;
+            top: 6px;
+            width: 0;
+            @include media-breakpoint-up(md) {
+                width: 480px;
+            }
+            @include media-breakpoint-up(lg) {
+                width: 380px;
+            }
+            @include media-breakpoint-up(xl) {
+                width: 584px;
+            }
+            height: 4px;
+            border-radius: 2px;
+            background-color: $light-grey-two;
+            z-index: 10;
+        }
+        .Entity-Connection-timeline-color {
+            min-width: 4px;
+            height: 4px;
+            border-radius: 2px;
+            position: absolute;
+            left: 100px;
+            top: 0;
+            z-index: 20;
+            @include media-breakpoint-down(sm) {
+                display: none;
+            }
+        }
+    }
+    .Entity-ConnectionType-dropdown {
+        margin-top: -42px;
+        @include media-breakpoint-down(lg) {
+            margin-top: 16px;
+            float: left;
+            margin-bottom: 16px;
+        }
+        @include media-breakpoint-down(md) {
+            margin-top: 14px;
+            select {
+                font-size: 14px;
+                padding: 3px 20px 3px 8px;
+            }
+        }
+        float: right;
+    }
+}
+.visualization-Connections .Entity-Connections-row {
+    min-height: 58px;
+    margin-bottom: 4px;
+    border-radius: 3px;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    margin-left: 0;
+}
+.visualization-Connections .Entity-Connection-timeline .Entity-Connection-timeline-gray {
+    @include media-breakpoint-up(md) {
+        width: 150px;
+    }
+    @include media-breakpoint-up(lg) {
+        width: 380px;
+    }
+    @include media-breakpoint-up(xl) {
+        width: 584px;
+    }
+}
+ol.carousel-indicators {
+    display: none;
+}
+.carousel-control-next-icon {
+    width: 48px !important;
+    height: 48px !important;
+    background-image: url("../images/angle-right@3x.png") !important;
+}
+.carousel-control-prev, .carousel-control-next {
+    opacity: 1 !important;
+    cursor: pointer;
+    @include media-breakpoint-down(lg) {
+        width: 5% !important;
+    }
+}
+.carousel-control-prev-icon {
+    width: 48px !important;
+    height: 48px !important;
+    background-image: url("../images/angle-left@3x.png") !important;
+}
+.carousel-item {
+    height: 264px;
+    @include media-breakpoint-down(lg) {
+        height: 224px;
+    }
+    @include media-breakpoint-down(sm) {
+        height: 204px;
+    }
+    .rv-xy-plot {
+        margin-left: 55px;
+        @include media-breakpoint-down(md) {
+            margin-left: 0;
+        }
+    }
+}
+
+.modal {
+    .modal-dialog {
+        max-width: calc(100% - 20px);
+        @include media-breakpoint-up(lg) {
+            max-width: 1024px;
+        }
+        @include media-breakpoint-up(xl) {
+            width: 1400px;
+        }
+    }
+    .modal-content {
+        background-color: white;
+        //min-width: 1000px;
+    }
+    .modal-header {
+        padding: 32px 32px 0;
+        border-bottom: none;
+        @include media-breakpoint-down(sm) {
+            font-size: 0px;
+        }
+        button {
+            padding: 0 16px;
+            opacity: 1;
+            margin: 0;
+            float: right;
+            @include Text-Style-6-left;
+            color: $lipstick !important;
+            .fa {
+                color: $black-60 !important;
+                font-weight: normal;
+                font-size: 21px;
+                padding: 0 6px;
+            }
+            &:hover, &:active, &:focus, &:active:focus {
+                box-shadow: none !important;
+                outline: none !important;
+                background-color: transparent !important;
+                border: none !important;
+            }
+            @include media-breakpoint-down(sm) {
+                span {
+                    font-size: 0;
+                }
+            }
+        }
+        .modal-title {
+            @include Text-Style-6-left-80-bold;
+            text-transform: uppercase;
+            @include media-breakpoint-down(sm) {
+                font-size: 18px;
+            }
+        }
+    }
+    .modal-body {
+        padding: 16px 32px 32px;
+        overflow-x: auto;
+        table {
+            width: 100%;
+            tr {
+                border-bottom: 1px solid $light-grey;
+            }
+            th, td {
+                @include Text-Style-6-left;
+                height: 56px;
+                padding: 15px 16px 17px 16px;
+                @include media-breakpoint-down(sm) {
+                    font-size: 16px;
+                    padding: 12px 12px 13px 13px;
+                }
+            }
+            th {
+                background-color: $white;
+            }
+            td {
+                color: $black-60;
+                background-color: white;
+                a {
+                    color: $lipstick;
+                }
+            }
+        }
+
+        button, button:hover, button:focus, button:active, button:visited, a, a:hover, a:focus, a:active, a:visited, .AppModal-Button-Link {
+            background-color: transparent !important;
+            border: none !important;
+            @include Text-Style-6-left-60;
+            color: $lipstick !important;
+            box-shadow: none !important;
+            cursor: pointer;
+            .font-awesome-holder, .font-awesome-holder:active, .font-awesome-holder:focus, .font-awesome-holder:visited {
+                padding: 0;
+                color: $lipstick;
+                background-color: transparent;
+                border: none;
+                font-size: 14px;
+                margin-left: 6px;
+                box-shadow: none !important;
+            }
+            @include media-breakpoint-down(sm) {
+                font-size: 16px;
+            }
+        }
+        button.yes.btn.btn-secondary, button.yes.btn.btn-secondary:hover, button.yes.btn.btn-secondary:focus, button.yes.btn.btn-secondary:active, button.yes.btn.btn-secondary:active:focus, button.no.btn.btn-secondary, button.no.btn.btn-secondary:hover, button.no.btn.btn-secondary:focus, button.no.btn.btn-secondary:active, button.no.btn.btn-secondary:active:focus {
+            @include Text-Style-7-bold;
+            color: white !important;
+            text-align: center;
+            width: 92px !important;
+            height: 48px !important;
+            border-radius: 2px !important;
+            background-color: $lipstick !important;
+            border: none !important;
+            margin-top: 24px;
+        }
+        button.no {
+            margin-left: 24px;
+        }
+        a, a:hover, a:focus, a:active, a:visited {
+            font-size: 16px;
+            span {
+                color: $black-60;
+            }
+        }
+        input {
+            margin-top: 24px;
+            @include Text-Style-7-80;
+            width: 100%;
+            height: 48px;
+            padding: 0 16px;
+            background-color: white;
+            border-radius: 2px;
+            border: 1px solid $light-grey;
+            @include Text-Style-7-80;
+            &:focus {
+                box-shadow: 0 0 0 3px $light-grey-five;
+            }
+            @include media-breakpoint-down(sm) {
+                max-width: 100%;
+            }
+        }
+    }
+}
+
+.modal .modalVideo {
+    .modal-content {
+        background-color: transparent;
+        border: none;
+    }
+    .close.closeVideo {
+        top: 16px;
+        position: relative;
+        left: 16px;
+        z-index: 1;
+        background-color: $light-grey-five;
+        border-radius: 16px;
+        height: 32px;
+        width: 32px;
+        padding-left: 9px;
+        span {
+            color: $black-60;
+        }
+        &:hover {
+            background-color: $lipstick !important;
+            opacity: 1;
+            span {
+                color: white;
+            }
+        }
+    }
+    .modal-header.modalVideo-header {
+        padding: 0;
+        justify-content: flex-end;
+        background-color: transparent;
+    }
+    .modal-body {
+        padding: 0;
+        border: 1px solid rgba(0,0,0,.2);
+        border-radius: 6px;
+        & > div {
+            border-radius: 6px;
+        }
+    }
+}
+
+.font-awesome-button, .font-awesome-button:active, .font-awesome-button:focus, .font-awesome-button:hover {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: $lipstick !important;
+    cursor: pointer;
+    font-size: 21px;
+}
+.Entity-left-column-subtitle.Entity-left-column-subtitle-red .font-awesome-button {
+    position: relative;
+    top: 2px;
+}
+.Connection-attributes .Entity-left-column-subtitle.Entity-left-column-subtitle-red  {
+    display: inline-block;
+    margin-left: 12px;
+}
+.Entity-left-column-Connections-title .font-awesome-button {
+    margin: -2px 0 0 24px !important;
+}

@@ -1,0 +1,228 @@
+@import "custom_bootstrap.scss";
+
+.Login-input-header {
+    @include Text-Style-7;
+    margin: 24px 0 8px 0;
+}
+.Personal-container {
+    position: relative;
+    padding-top: 72px;
+    padding-bottom: 72px;
+}
+.Login-div {
+    text-align: left;
+    form {
+        width: 100%;
+    }
+    .Login-column {
+        h1{
+            @include Text-Style-3;
+            margin-bottom: 8px;
+        }
+        h2{
+            @include Text-Style-6-left;
+            margin-top: 8px;
+            margin-bottom: 8px;
+        }
+        .invalid-feedback, .form-group {
+            clear: both;
+        }
+        .invalid-feedback {
+            font-size: 16px;
+            font-weight: bold;
+        }
+        form > .form-group {
+            min-height: 105px;
+            margin-bottom: 0;
+            &:last-child {
+                min-height: 98px;
+            }
+        }
+        form > .form-check {
+            min-height: 45px;
+            margin-bottom: 0;
+            label {
+                margin-top: 12px;
+            }
+        }
+        #Login-Username, #Login-Password, #Login-Repeat-Password, #Login-Email, #Login-Name, #Login-Surname, #Change-Password, #Change-Repeat-Password {
+            width: 352px;
+            max-width: 100%;
+            height: 48px;
+            float: left;
+            padding: 0 16px;
+            background-color: white;
+            border-radius: 2px;
+            border: 1px solid $light-grey;
+            @include Text-Style-7-80;
+            &:focus {
+                box-shadow: 0 0 0 3px $light-grey-five;
+                outline: none;
+            }
+            margin-bottom: 6px;
+
+            &.is-invalid {
+                border-color: $lipstick;
+                box-shadow: 0 0 0 3px rgba(255, 91, 60, 0.4);
+            }
+            &.is-touched.av-valid {
+                border-color: #7BE934;
+                box-shadow: 0 0 0 3px rgba(123, 233, 52, 0.4);
+            }
+        }
+        #Login-Email-Accept {
+            position: relative;
+            top: 10px;
+            margin-right: 16px;
+        }
+        .Login-alert {
+            @include Text-Style-6-left;
+            color: $lipstick;
+            clear: both;
+        }
+        .Login-button-submit {
+            font-family: $font-family-sans-serif;
+            font-size: 18px;
+            font-weight: bold;
+            line-height: 1;
+            color: white;
+            width: 192px;
+            height: 48px;
+            border-radius: 2px;
+            background-color: $lipstick;
+            border: none;
+            float: left;
+            clear: both;
+            margin-top: 24px;
+        }
+
+        button:active, button:focus, button:active:focus {
+            border: none;
+            background: none;
+            background-color: $lipstick;
+            box-shadow: none;
+            outline: none;
+        }
+    }
+    .Signup-right-column {
+        h2 {
+            font-size: 21px;
+            color: $black-80;
+            font-weight: bold;
+            margin: 24px 0;
+        }
+        .Signup-right-column-bullet {
+            font-size: 21px;
+            color: $black-60;
+            height: 40px;
+            margin-bottom: 16px;
+            .font-awesome-holder {
+                height: 40px;
+                width: 40px;
+                display: block;
+                float: left;
+                border-radius: 20px;
+                margin-right: 16px;
+                background-color: $light-grey-five;
+                color: $lipstick;
+                font-size: 16px;
+                padding: 8px 12px;
+            }
+        }
+    }
+    .Login-lost-pass, .Login-change-pass {
+        @include Text-Style-7-lipstick;
+        background-color: transparent;
+        border: none;
+        float: left;
+        margin-left: 32px;
+        &:active, &:focus, &:hover, &:active:focus {
+            @include Text-Style-7-lipstick;
+            color: $lipstick !important;
+            text-decoration: none !important;
+            background-color: transparent !important;
+            border: none !important;
+            box-shadow: none !important;
+            outline: none !important;
+        }
+    }
+    .Login-lost-pass {
+        margin-top: 30px;
+    }
+    .Login-change-pass {
+        margin-top: 7px;
+    }
+    .Login-div-Link {
+        @include Text-Style-7;
+        margin-top: -18px;
+        //margin-left: 220px;
+    }
+    .Login-link {
+        @include Text-Style-7-lipstick;
+        &:active, &:focus, &:hover, &:active:focus {
+            text-decoration: none;
+            outline: none;
+        }
+    }
+}
+.Login-div.Login-Button-div {
+    position: absolute;
+    left: 250px;
+    height: 42px;
+    width: 300px;
+}
+.Login-div.Login-Button-div.SignupPage {
+    position: relative;
+    top: -42px;
+    left: 250px;
+    @include media-breakpoint-down(xs) {
+        left: 0;
+        top: 20px;
+    }
+}
+.Login-div.Login-Button-div.LoginPage {
+    position: relative;
+    top: -96px;
+    left: 180px;
+    @include media-breakpoint-down(xs) {
+        left: 0;
+        top: 20px;
+        button, button:active, button:focus, button:hover, button:active:focus {
+            margin: 0;
+        }
+    }
+}
+.Login-div.Login-Button-div.PersonalPage {
+    top: 620px;
+    left: 220px;
+    @include media-breakpoint-down(xs) {
+        left: 20px;
+        top: 20px;
+        button, button:active, button:focus, button:hover, button:active:focus {
+            margin: 0;
+        }
+    }
+}
+
+.LostPass-modal {
+    width: 600px !important;
+}
+.modal .modal-body button.LostPassword-submit, .modal .modal-body button.ChangePassword-submit {
+    @include Text-Style-7-bold;
+    color: white !important;
+    text-align: center;
+    width: 192px;
+    height: 48px;
+    border-radius: 2px;
+    background-color: $lipstick !important;
+    border: none !important;
+    float: left;
+    clear: both;
+    margin-top: 24px;
+    &:active, &:focus, &:active:focus {
+        border: none !important;
+        background-color: $lipstick !important;
+        box-shadow: none !important;
+        outline: none !important;
+    }
+}

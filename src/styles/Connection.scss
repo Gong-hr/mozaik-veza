@@ -1,0 +1,274 @@
+@import "custom_bootstrap.scss";
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/mixins";
+
+.Connection-container {
+    padding-top: 72px;
+    padding-bottom: 72px;
+    @include media-breakpoint-down(sm) {
+        padding-top: 36px;
+        padding-bottom: 36px;
+    }
+    .Connection-row > div:first-child {
+        padding-left: 16px;
+        @include media-breakpoint-up(md) {
+            padding-left: 0;
+        }
+        @include media-breakpoint-up(xl) {
+            padding-right: 32px;
+        }
+    }
+    .Entity-right-column-about h1 {
+        margin-top: 0px;
+    }
+    h1 {
+        @include Text-Style-3;
+        @include media-breakpoint-down(sm) {
+            font-size: 32px;
+            //margin-top: -48px;
+        }
+        margin-bottom: 4px;
+        line-height: 1.5;
+    }
+    .Entity-right-column-about h1, .Connection-right-column-related h1 {
+        margin-top: 0px;
+        line-height: 32px !important;
+    }
+    .Connection-attributes {
+        text-align: left;
+        button, button:active, button:focus, button:active:focus {
+            display: inline;
+            border: none;
+            background: none !important;
+            box-shadow: none !important;
+            outline: none;
+            cursor: pointer;
+            color: $lipstick;
+        }
+        .Connection-left-column-subtitle {
+            @include Text-Style-6-left-60;
+            @include media-breakpoint-down(sm) {
+                font-size: 18px;
+            }
+            &.Connection-left-column-subtitle-red {
+                color: $lipstick;
+                //margin-left: 24px;
+                .font-awesome-holder {
+                    color: $black-60;
+                }
+            }
+
+            .font-awesome-holder {
+                font-size: 24px;
+                @include media-breakpoint-down(sm) {
+                    font-size: 18px;
+                }
+                margin-right: 12px;
+            }
+        }
+    }
+    h2 {
+        @include Text-Style-6-left-red;
+        a, a:hover, a:focus, a:active {
+            @include Text-Style-6-left-red;
+        }
+        span {
+            color: $black-60;
+        }
+    }
+    p {
+        @include Text-Style-5-not-bold;
+        span {
+            margin-right: 12px;
+        }
+    }
+    .Connection-ConnectionInfo {
+        position: relative;
+        padding-left: 36px;
+        padding-top: 36px;
+        padding-bottom: 36px;
+        margin-bottom: 16px;
+        @include media-breakpoint-down(sm) {
+            padding: 24px 0 24px 24px;
+        }
+        @include media-breakpoint-down(xs) {
+            padding: 24px 0;
+        }
+        @include Text-Style-6-left-60;
+        h2 {
+            @include Text-Style-6-left-80-bold;
+            @include media-breakpoint-down(sm) {
+                font-size: 18px;
+            }
+            margin-bottom: 0;
+            display: flex;
+            align-items: center;
+        }
+        a:hover {
+            text-decoration: none;
+            & > h2 > span {
+                text-decoration: underline;
+            }
+        }
+        & > div:nth-child(3) {
+            margin-top: 24px;
+        }
+
+        .Connection-ConnectionInfo-div {
+            @include Text-Style-6-left-60;
+            @include media-breakpoint-down(sm) {
+                font-size: 16px;
+            }
+            margin-top: 12px;
+            margin-left: 32px;
+            min-height: 28px;
+            .bullet-dash {
+                display: inline-block;
+                width: 16px;
+                height: 2px;
+                margin-bottom: 6px;
+                margin-right: 12px;
+                background-color: $light-grey;
+                margin-left: -28px;
+            }
+            .font-awesome-holder {
+                color: $light-grey;
+                font-size: 16px;
+                position: relative;
+                bottom: 1px;
+                left: 6px;
+            }
+            button {
+                border: none;
+                background: none;
+                padding: 0 0 4px 0px;
+            }
+            button:active, button:focus, button:active:focus {
+                border: none;
+                background: none;
+                box-shadow: none;
+                outline: none;
+            }
+        }
+        .Connection-ConnectionInfo-more-div {
+            @include Text-Style-6-left-60;
+            color: $lipstick;
+            margin-top: 24px;
+            .font-awesome-holder {
+                font-size: 16px;
+                margin-left: 6px;
+            }
+        }
+        .connection-type-abbr {
+            float: none;
+            margin-top: 2px;
+        }
+    }
+
+    .Connection-right-column {
+        border-left: solid 1px $light-grey;
+        @include media-breakpoint-down(md) {
+            border-left: none;
+        }
+        .Connection-right-column-inner-div {
+            max-width: 384px;
+            float: right;
+            @include media-breakpoint-down(sm) {
+                float: none;
+                position: relative;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 24px;
+            }
+            border-top: solid 4px $sunflower-yellow;
+            border-left: solid 1px $light-grey;
+            border-bottom: solid 1px $light-grey;
+            border-right: solid 1px $light-grey;
+            border-radius: 2px;
+            padding-top: 24px;
+            margin-bottom: 24px;
+        }
+        .Connection-right-column-inner-div-no-border {
+            max-width: 384px;
+            float: right;
+            @include media-breakpoint-down(sm) {
+                float: none;
+                position: relative;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 24px;
+            }
+            border: none;
+            padding-top: 24px;
+            margin-bottom: 24px;
+            padding-left: 0;
+            padding-right: 0;
+        }
+        .Connection-right-column-about, .Connection-right-column-related {
+            text-align: left;
+            h1 {
+                @include Text-Style-bold;
+                margin-bottom: 24px;
+                text-align: left;
+                text-transform: uppercase;
+                padding-left: 24px;
+                padding-right: 24px;
+            }
+            span {
+                font-size: 32px;
+                line-height: 1;
+                color: $sunflower-yellow;
+            }
+            &.Connection-right-column-related span {
+                color: $black-60;
+                @include media-breakpoint-up(sm) {
+                    display: inline;
+                }
+                @include media-breakpoint-up(md) {
+                    display: none;
+                }
+                @include media-breakpoint-up(lg) {
+                    display: inline;
+                }
+            }
+            .Connection-right-column-about-link {
+                @include Text-Style-bold;
+                color: $lipstick;
+                text-align: left;
+                margin-bottom: 24px;
+                span {
+                    color: $black-60;
+                    font-size: 18px;
+                    line-height: 1.5;
+                    margin-left: 6px;
+                }
+            }
+        }
+    }
+}
+.Filter-Link-right-details {
+    .Connection-right-column-related-Connection {
+        //border-radius: 0;
+    }
+    .Connection-container {
+        padding-top: 0px;
+        padding-left: 24px;
+        padding-right: 24px;
+        h1 {
+            font-size: 22px;
+            margin-top: 0;
+        }
+        h2, h2 > a {
+            font-size: 18px;
+        }
+        .Connection-ConnectionInfo {
+            padding-left: 32px;
+            padding-top: 32px;
+            padding-bottom: 32px;
+            .Connection-ConnectionInfo-div {
+                font-size: 16px;
+            }
+        }
+    }
+}

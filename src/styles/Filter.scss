@@ -1,0 +1,1067 @@
+@import "custom_bootstrap.scss";
+
+.visualization {
+    //min-height: 100vh;
+    position: absolute;
+    background-color: white;//$light-grey-two;
+    top: 0;
+    bottom: 0px;
+    z-index: 1000;
+    left: 0;
+    right: 0;
+    .Filter-closeButton {
+        &:focus {
+            outline: none;
+        }
+        a {
+            @include Text-Style;
+            color: $black-60;
+            font-size: 16px;
+            position: relative;
+            padding-left: 9px;
+            display: block;
+            width: 90px;
+            height: 30px;
+        }
+        a:hover, a:focus, a:active {
+            text-decoration: none;
+            outline: none;
+        }
+        a:active {
+        }
+        background-color: $light-grey-four;
+        z-index: 100002;
+        height: 30px;
+        width: 90px;
+        padding-top: 3px;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        border-radius: 3px;
+        span {
+            display: block;
+            position: absolute;
+            top: 0.5px;
+            right: 10px;
+        }
+        /*@include media-breakpoint-down(lg) {
+            top: 20px;
+            right: 20px;
+        }*/
+    }
+    .vis-tooltip {
+        text-align: left;
+        position: absolute;
+        background-color: $light-grey-two;
+        border-radius: 4px;
+        padding: 16px;
+        box-shadow: 2px 2px 10px $black-40;
+        span {
+            margin-top: 12px;
+            font-size: 14px;
+            display: block;
+            font-weight: bold;
+            color: $lipstick;
+        }
+    }
+}
+
+.Filter {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 368px;
+    z-index: 1001;
+    &.Filter-Body-shown {
+        bottom: 0;
+        @include media-breakpoint-down(sm) {
+            bottom: 0;
+            top: 0;
+            width: 100%;
+            min-width: 368px;
+        }
+    }
+    &.Filter-Body-hidden {
+        bottom: unset;
+        @include media-breakpoint-down(sm) {
+            bottom: 0;
+            top: unset;
+            width: 100%;
+            min-width: 368px;
+        }
+    }
+
+    .Filter-Header {
+        width: 368px;
+        @include media-breakpoint-down(sm) {
+            width: 100%;
+            min-width: 368px;
+        }
+        height: 56px;
+        background-color: $light-grey;
+        display: flex;
+        align-items: center;
+        padding: 16px 24px;
+        @include Text-Style-bold-60;
+        .Filter-Header-title {
+            width: 288px;
+            text-transform: uppercase;
+            @include media-breakpoint-down(sm){
+                min-width: 288px;
+                width: calc(100% - 50px);
+            }
+        }
+        button:focus {
+            outline: none;
+        }
+        .font-awesome-holder {
+            float: right;
+        }
+    }
+    .Filter-Body {
+        padding: 36px 0;
+        background-color: $white;
+        position: absolute;
+        top: 56px;
+        bottom: 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+        @include media-breakpoint-down(sm){
+            left: 0;
+            right: 0;
+        }
+        .Filter-Tabs {
+            width: 368px;
+            height: 48px;
+            margin-bottom: 24px;
+            .Filter-Tab {
+                border-bottom: 2px solid $light-grey;
+                display: flex;
+                align-items: center;
+                float: left;
+                width: 160px;
+                height: 100%;
+                padding: 0 16px;
+                @include Text-Style;
+                .font-awesome-holder {
+                    margin-right: 8px;
+                }
+                &.activeTab {
+                    span {
+                        color: $lipstick;
+                    }
+                    border-bottom: 2px solid $lipstick;
+                }
+            }
+        }
+        .Filter-Search {
+            position: relative;
+            input {
+                @include Text-Style;
+                width: 320px;
+                height: 48px;
+                border-radius: 2px;
+                background-color: $white-two;
+                border: solid 1px $light-grey;
+                padding: 12px 40px 12px 16px;
+            }
+            margin-bottom: 16px;
+            .search-button {
+                @include Text-Style;
+                position: absolute;
+                top: 0;
+                right: 0;
+                height: 100%;
+                width: 36px;
+                background: none;
+                border: none;
+            }
+        }
+        .Filter-Search-AllShown {
+            width: 320px;
+            display: inline-block;
+            .Filter-Search-Shown {
+                @include Text-Style-9-60;
+                font-weight: bold;
+                height: 24px;
+                border-radius: 2px;
+                background-color: $sunflower-yellow;
+                display: inline-block;
+                float: left;
+                margin-right: 8px;
+                margin-bottom: 16px;
+                padding: 2px 8px;
+                button {
+                    font-weight: normal;
+                    border: none;
+                    background-color: transparent;
+                    height: 24px;
+                    width: 24px;
+                }
+            }
+        }
+        .star-div {
+            text-align: left;
+            position: absolute;
+            top: 10px;
+            left: 24px;
+            .grey-icon {
+                color: $black-60;
+            }
+            button, button:active, button:focus, button:hover, button:active:focus {
+                padding: 0;
+                background-color: transparent;
+                border: none;
+                box-shadow: none;
+                outline: none;
+                //color: $black-60;
+                color: $lipstick;
+                span {
+                    margin-left: 12px;
+                    font-weight: bold;
+                }
+            }
+            &.star-div-sunflower {
+                button, button:active, button:focus, button:hover, button:active:focus {
+                    color: $sunflower-yellow;
+                }
+            }
+            &:hover {
+                button, button:active, button:focus, button:hover, button:active:focus{
+                    span {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+        .Filter-Connection-category {
+            position: relative;
+            @include Text-Style-60;
+            color: $black-80;
+            width: 368px;
+            @include media-breakpoint-down(sm){
+                width: unset;
+            }
+            margin-top: 8px;
+            //overflow: hidden;
+            .Filter-Connection-category-header {
+                color: $black-60;
+                height: 24px;
+                margin-bottom: 8px;
+                padding-left: 24px;
+            }
+            .transactionAmount {
+                position: relative;
+                height: 60px;
+                padding: 0 24px;
+                input[type=text] {
+                    width: 152px;
+                    @include media-breakpoint-down(sm) {
+                        width: 46%;
+                    }
+                    height: 48px;
+                    float: left;
+                    &:last-child {
+                        float: right;
+                    }
+                    padding: 0 16px;
+                    background-color: white;
+                    border-radius: 2px;
+                    border: 1px solid $light-grey;
+                    @include Text-Style-7-80;
+                    &:focus {
+                        outline-color: $light-grey;
+                        box-shadow:  0 0 0 3px $light-grey-five;
+                    }
+                    margin-bottom: 6px;
+                    &.wrongInput {
+                        border-color: $lipstick;
+                        &:focus {
+                            box-shadow: 0 0 0 3px rgba(255, 91, 60, 0.4);
+                        }
+                    }
+                }
+            }
+        }
+        .FormGroup-Dates {
+            position: relative;
+            height: 40px;
+            :first-child {
+                margin-right: 16px;
+            }
+            input[type=datetime] {
+                width: 152px;
+                height: 48px;
+                float: left;
+                border-radius: 0;
+                background-color: white;
+                border-color: $light-grey;
+                &:focus {
+                    box-shadow: 0 0 0 3px rgba(232, 231, 222, 0.25);
+                }
+                margin-bottom: 6px;
+            }
+            margin-bottom: 12px;
+        }
+        .FormGroup-PEP {
+            height: 40px;
+            margin: 4px 0;
+            padding: 8px 24px;
+            position: relative;
+
+        }
+        .Filter-Connection-category-description {
+            margin-left: 36px;
+            @include Text-Style-9;
+            width: 280px;
+        }
+    }
+    .checkboxDiv {
+        height: 40px;
+        margin: 0;
+        padding: 8px 24px;
+        position: relative;
+        button {
+            cursor: pointer;
+            position: relative;
+            margin: -8px 0 0 0;
+            padding: 0;
+            float: right;
+            height: 40px;
+            width: 40px;
+            background-color: transparent;
+            color: white;
+            border: none;
+            border-left: 1px solid $light-grey;
+            .icon {
+                position: absolute;
+                top: 12px;
+                left: 14px;
+                color: $black-60;
+                font-size: 16px;
+                font-weight: normal;
+            }
+            .icon-expand-open {
+                //transform: rotate(0deg);
+            }
+            &:focus {
+                outline: none;
+            }
+            & > * {
+                pointer-events: none;
+            }
+        }
+        &.whiteBackground {
+            background-color: $white-two;
+            box-shadow: 0 -1px 0 0 $light-grey-five, 0 1px 0 0 $light-grey-five;
+            button {
+                border-color: $white-two;
+                .icon {
+                    //color: $black-40;
+                    transform: rotate(180deg);
+                }
+            }
+        }
+    }
+    input[type="checkbox"] {
+        visibility: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 258px;
+        height: 40px;
+    }
+    input[type="checkbox"] + label > span {
+        //background-color: $light-grey-four;
+        background-color: white;
+        border: 1px solid $light-grey;
+        color: white;
+        float: left;
+        left: 4px;
+        height: 24px;
+        padding-top: 0px;
+        width: 24px;
+        margin-right: 12px;
+        text-align: center;
+    }
+    input[type="checkbox"]:checked + label > span {
+        background-color: $lipstick;
+        border: none;
+    }
+    input[type="checkbox"].semiChecked + label > span {
+        background-color: $light-grey-four;
+        border: none;
+    }
+    label {
+        float: left;
+        cursor: pointer;
+        width: calc(100% - 42px);
+    }
+    .Filter-childrenCheckboxes {
+        /*input[type="checkbox"] + label > span {
+            background-color: transparent;
+            border: 1px solid $light-grey;
+            border-radius: 2px;
+        }
+        input[type="checkbox"]:checked + label > span {
+            background-color: $lipstick;
+            border: none;
+        }*/
+        box-shadow: 2px 0px 2px $light-grey;
+        background-color: $white-two;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 368px;
+        min-width: 400px;
+        @include media-breakpoint-up(lg) {
+            width: 600px;
+        }
+        @include media-breakpoint-up(xl) {
+            width: 752px;
+        }
+        .Filter-childrenCheckboxes-header {
+            padding: 16px 24px;
+            height: 56px;
+            background-color: $white-two;
+            @include Text-Style-bold-60;
+            .Filter-childrenCheckboxes-Header-title {
+                width: 600px;
+                text-transform: uppercase;
+            }
+            button {
+                font-weight: normal;
+                float: right;
+                cursor: pointer;
+                .font-awesome-holder {
+                    color: $black-60;
+                    font-size: 16px;
+                    top: 1px;
+                    position: relative;
+                }
+                &:focus {
+                    outline: none;
+                }
+            }
+        }
+        .Filter-childrenCheckboxes-body {
+            padding: 24px;
+            overflow-y: auto;
+            overflow-x: hidden;
+            max-height: calc(100% - 104px);
+            margin-top: 24px;
+            border-top: 1px solid $light-grey;
+            .checkboxDiv {
+                padding-left: 0;
+            }
+        }
+        .Filter-childrenCheckboxes-search {
+            position: relative;
+            padding: 0 24px;
+            ::placeholder {
+                color: $black-40;
+            }
+            input {
+                border: 1px solid $light-grey;
+                height: 48px;
+                width: 100%;
+                padding: 0 32px 0 16px;
+                @include Text-Style-60;
+                &:active, &:focus {
+                    border: none;
+                    outline: none;
+                    box-shadow: 0 0 0 3px $light-grey-five;
+                }
+            }
+            .font-awesome-holder {
+                position: absolute;
+                right: 36px;
+                top: 14px;
+            }
+        }
+        @include media-breakpoint-down(sm) {
+            left: 0;
+            z-index: 2000;
+            width: 100%;
+            margin-top: 53px;
+            margin-bottom: 100px;
+        }
+    }
+    .Filter-childrenCheckboxes.Filter-childrenCheckboxes-entityType {
+        @include media-breakpoint-down(sm) {
+            width: 100%;
+        }
+    }
+    /*.FormGroup-PEP > .btn:not(:last-child):not(.dropdown-toggle), .btn-group > .btn-group:not(:last-child) > .btn {
+        border-radius: 1px;
+        background-color: white;
+        border: 1px solid $light-grey;
+        color: white;
+        width: 24px;
+        height: 24px;
+        font-size: 16px;
+        padding: 0;
+        margin-right: 12px;
+        &:active, &:visited, &:focus {
+            border: 1px solid $light-grey;
+            box-shadow: none;
+        }
+    }
+    .FormGroup-PEP input[type="checkbox"]:checked + .FormGroup-PEP > .btn:not(:last-child):not(.dropdown-toggle), .FormGroup-PEP > .btn-group:not(:last-child) > .btn {
+        background-color: $lipstick;
+    }*/
+}
+/*
+.react-checkbox-tree {
+    width: 100%;
+    display: inline-block;
+    position: relative;
+    input[type=checkbox] {
+        visibility: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 258px;
+        height: 40px;
+    }
+    ol {
+        position: relative;
+        list-style: none;
+        padding-left: 0;
+        text-align: left;
+        .rct-node {
+            position: relative;
+            margin: 4px 0;
+            padding: 8px 0;
+            .rct-node-icon {
+                position: absolute;
+                left: 4px;
+                color: white;
+            }
+            .rct-text {
+                height: 40px;
+                @include Text-Style-5-not-bold-80;
+                font-size: 18px;
+                button {
+                    cursor: pointer;
+                    position: relative;
+                    margin: -8px 0 0 0;
+                    padding: 0;
+                    float: right;
+                    height: 40px;
+                    width: 40px;
+                    background-color: transparent;
+                    color: white;
+                    border: none;
+                    .rct-icon {
+                        position: absolute;
+                        top: 16px;
+                        left: 14px;
+                        line-height: 8px;
+                        &:after {
+                            //content: "\2039 ";
+                            //content: "\2329 ";
+                            content: "\276E ";
+                            color: $black-60;
+                            font-size: 18px;
+                            font-weight: normal;
+                        }
+                    }
+                    .rct-icon-expand-open {
+                        transform: rotate(90deg);
+                    }
+                    .rct-icon-expand-close {
+                        transform: rotate(270deg);
+                    }
+                }
+                label {
+                    cursor: pointer;
+                }
+            }
+            &.rct-node-parent {
+                .rct-text button {
+                    border-left: 1px solid $light-grey;
+                }
+            }
+            label {
+                margin-bottom: 0;
+                .rct-checkbox {
+                    float: left;
+                    height: 24px;
+                    width: 24px;
+                    border: none;
+                    color: white;
+                    margin-right: 12px;
+                    .rct-icon {
+                        display: block;
+                        font-size: 32px;
+                        height: 24px;
+                        width: 24px;
+                        background-color: $light-grey-four;
+                        &.rct-icon-uncheck {
+                            background-color: $light-grey-four;
+                        }
+                        &.rct-icon-check {
+                            background-color: $lipstick;
+                        }
+                    }
+                }
+            }
+        }
+        & > li > ol {
+            padding-left: 40px;
+            overflow-x: hidden;
+            overflow-y: auto;
+            max-height: 240px;
+            .rct-text {
+                font-size: 16;
+            }
+        }
+    }
+}
+*/
+.Filter-Category-Search {
+    position: absolute;
+    top: 0;
+    left: 368px;
+    bottom: 0;
+
+    @include media-breakpoint-up(md) {
+        width: 350px;
+    }
+    @include media-breakpoint-up(lg) {
+        width: 500px;
+    }
+    @include media-breakpoint-up(xl) {
+        width: 752px;
+    }
+    background-color: white;
+    padding: 16px 24px;
+    z-index: 1000;
+    box-shadow: -1px 0 0 0 $light-grey, 1px 0 0 0 $light-grey;
+    .Filter-Category-Search-Header {
+        position: relative;
+        width: 100%;
+        height: 36px;
+        display: flex;
+        padding: 0;
+        @include Text-Style-bold-60;
+        .Filter-Category-Search-Header-title {
+            text-transform: uppercase;
+        }
+        .Filter-Category-Search-Header-close {
+            position: absolute;
+            right: 0;
+            font-weight: normal;
+            button {
+                @include Text-Style-60;
+            }
+        }
+        .font-awesome-holder {
+            font-size: 16px;
+            margin-left: 8px;
+        }
+    }
+    .Filter-Category-Search-Search {
+        @include Text-Style;
+        position: relative;
+        height: 48px;
+        border: solid 1px $light-grey;
+        margin-top: 6px;
+        margin-bottom: 12px;
+        input {
+            @include Text-Style;
+            border: none;
+            width: 100%;
+            padding-left: 24px;
+            padding-right: 64px;
+            height: 100%;
+            &::placeholder {
+                color: $black-40;
+            }
+        }
+        .search-button {
+            @include Text-Style-40;
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%;
+            width: 42px;
+            background: none;
+            border: none;
+        }
+    }
+    .Filter-Category-Search-Results {
+        @include Text-Style;
+        .rct-icon-uncheck {
+            background-color: white !important;
+            border: 1px solid $light-grey;
+        }
+        .react-checkbox-tree ol .rct-node .rct-text {
+            //@include Text-Style;
+            font-weight: 400;
+            .rct-title {
+                display: block;
+                margin-left: 36px;
+            }
+        }
+    }
+}
+.FilterVisualisation-Pagination-right {
+    position: absolute;
+    bottom: 20px;
+    @include media-breakpoint-down(sm) {
+        bottom: 76px;
+    }
+    right: 20px;
+    z-index: 1000;
+    font-size: 18px;
+}
+.FilterVisualisation-Pagination {
+    position: absolute;
+    left: 400px;
+    bottom: 32px;
+    z-index: 1000;
+    @include media-breakpoint-down(sm) {
+        left: 20px;
+        bottom: 70px;
+    }
+}
+.Filter-Pagination {
+    position: relative;
+    left: 0;
+    bottom: 0;
+    z-index: 1000;
+}
+
+.Filter-Entity-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 368px;
+    background-color: white;
+    z-index: 1001;
+    box-shadow: 0 0 16px 0 $black-40;
+    overflow: auto;
+    .Filter-Entity-right-Header {
+        position: relative;
+        padding: 16px 24px;
+        width: 100%;
+        height: 56px;
+        display: flex;
+        box-shadow: inset 0 -1px 0 0 $light-grey;
+        @include Text-Style-bold-60;
+        .Filter-Entity-right-Header-title {
+            text-transform: uppercase;
+        }
+        .Filter-Entity-right-Header-close {
+            position: absolute;
+            right: 16px;
+            font-weight: normal;
+            button, button:active, button:focus, button:visited, button:active:focus {
+                cursor: pointer;
+                outline: none;
+            }
+        }
+        .font-awesome-holder {
+            font-size: 16px;
+            margin-left: 8px;
+            color: $black-60;
+        }
+    }
+    .Filter-Link-right-details {
+        padding: 16px 0;
+    }
+    .Filter-Entity-right-details {
+        padding: 24px;
+        .Entity-left-column-subtitle {
+            margin-bottom: 10px;
+            color: $black-60;
+            .filterView {
+                margin-right: 6px;
+            }
+        }
+        h1 {
+            @include Text-Style-6-left-80-bold;
+            margin-top: 0;
+            margin-bottom: 6px;
+        }
+        h2 {
+            @include Text-Style-bold;
+            text-transform: uppercase;
+            margin-top: 16px;
+            margin-bottom: 8px;
+        }
+        .Filter-Entity-right-details-div {
+            text-align: left;
+            margin-left: 28px;
+            .bullet-dash {
+                width: 12px;
+            }
+            button {
+                border: none;
+                background: none;
+                padding: 0 0 4px 0px;
+            }
+            button:active, button:focus, button:active:focus {
+                border: none;
+                background: none;
+                box-shadow: none;
+                outline: none;
+            }
+        }
+        .Entity-left-column-info-div {
+            margin-left: 14px;
+        }
+
+        .moreAttributes {
+            text-align: left;
+            .Entity-left-column-info-div {
+                margin-left: 28px;
+                .bullet-dash {
+                    width: 12px;
+                }
+            }
+        }
+    }
+    @include media-breakpoint-down(sm) {
+        top: 64px;
+        margin-bottom: 64px;
+        max-width: 100%;
+    }
+}
+.Filter-Entity-right-details-more-div {
+    text-align: left;
+    margin-top: 10px;
+    a, a:hover, a:focus {
+        color: $lipstick;
+        text-align: left;
+        .font-awesome-holder {
+            font-size: 14px;
+            margin-left: 4px;
+        }
+    }
+}
+.Pagination-small {
+    margin-left: 20px;
+    .pagination_container {
+        li {
+            display: none;
+        }
+        li.next, li.previous {
+            display: flex;
+        }
+        li.next.disabled, li.previous.disabled {
+            a {
+                color: $black-20 !important;
+            }
+        }
+        li a {
+            color: $black-60 !important;
+            svg {
+                height: 48px;
+            }
+        }
+        li a, li a:hover, li a:focus, li a:active {
+            font-size: 18px;
+        }
+    }
+}
+.Paginatation-more-div {
+    text-align: left;
+    margin-bottom: 24px;
+}
+
+.Filter-Entity-right-details-circles { //used on xs screens in Entity
+    .Filter-Entity-right-details-circle-div {
+        height: 32px;
+        width: 100%;
+        padding: 8px 0;
+        @include Text-Style-5-80;
+        line-height: 16px;
+        font-weight: normal;
+        span {
+            font-weight: bold;
+        }
+        .circle {
+            width: 16px;
+            height: 16px;
+            border-radius: 8px;
+            float: left;
+            margin-right: 6px;
+        }
+    }
+}
+.Entity-left-column-connection-circles .Filter-Entity-right-details-circle-div { //for xs in Entity
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.DayPickers {
+    position: relative;
+    height: 60px;
+    padding: 0 24px;
+    .DayPickerInput {
+        position: relative;
+        border-radius: 2px;
+        border: 1px solid $light-grey;
+        input {
+            @include Text-Style-7-80;
+            width: 152px;
+            height: 48px;
+            padding: 0 16px;
+            border: none;
+            &:focus {
+                outline-color: $light-grey;
+                box-shadow:  0 0 0 3px $light-grey-five;
+            }
+        }
+        &:first-child {
+            float: left;
+        }
+        &:last-child {
+            float: right;
+        }
+        @include media-breakpoint-down(sm) {
+            width: 46%;
+            & > input {
+                width: 100%;
+            }
+        }
+        .DayPickerInput-OverlayWrapper {
+            @include Text-Style-5-not-bold;
+            .DayPickerInput-Overlay {
+                .DayPicker-NavButton {
+                    &.DayPicker-NavButton--prev, &.DayPicker-NavButton--next{
+                        width: 16px;
+                    }
+                }
+                .DayPicker-Caption {
+
+                }
+                .DayPicker-Caption > div {
+                    @include Text-Style-5-not-bold;
+                }
+                .DayPicker-Weekday {
+                    @include Text-Style-8;
+                    color: $black-40;
+                }
+                .DayPicker-Weekday, .DayPicker-Day {
+                    padding: 4px;
+                }
+                .DayPicker-Day {
+                    @include Text-Style-5-not-bold;
+                    line-height: 1;
+                }
+                .DayPicker-Day.DayPicker-Day--today {
+                    color: $lipstick;
+                }
+                .DayPicker:not(.DayPicker--interactionDisabled) .DayPicker-Day:not(.DayPicker-Day--disabled):not(.DayPicker-Day--selected):not(.DayPicker-Day--outside):hover {
+                    background-color: $light-grey-five;
+                    //background-color: $sunflower-yellow;
+                }
+                .DayPicker-Day--selected {
+                    background-color: transparent;
+                }
+                .DayPicker-Day--start {
+                    font-weight: bold;
+                }
+                .DayPicker-Day--end {
+                    font-weight: bold;
+                }
+                .DayPicker-Week {
+                    font-size: 14px;
+                    line-height: 1.2;
+                }
+                .DayPicker-Day--outside {
+                    color: $black-40;
+                    border-radius: 50%;
+                    &:hover {
+                        cursor: pointer;
+                        background-color: $light-grey-five;
+                    }
+                }
+                .DayPicker-Day--disabled {
+                    color: $black-20;
+                }
+                .DayPicker-Day--disabled.DayPicker-Day--outside:hover {
+                    cursor: default;
+                    background-color: transparent;
+                }
+            }
+        }
+        &:last-child .DayPickerInput-OverlayWrapper {
+            left: -67px;
+            @include media-breakpoint-down(sm){
+                left: 1px;
+            }
+        }
+    }
+    .DayPicker-Caption select {
+        border: none;
+        @include Text-Style-5-not-bold;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        cursor: pointer;
+        &:first-child {
+            margin-left: -10px;
+            width: 80px;
+        }
+        span {
+            display: none;
+        }
+    }
+    .DayPicker-Caption {
+        float: left;
+    }
+    .DayPicker-CloseButton {
+        position: absolute;
+        padding: 0 4px;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        color: $black-40;
+        top: 2px;
+        right: 4px;
+    }
+}
+.DayPickers.falseInputTo{
+    .DayPickerInput:last-child {
+        input:focus {
+            box-shadow: 0 0 0 3px rgba(255, 91, 60, 0.4);
+        }
+        border-color: $lipstick;
+    }
+}
+.DayPickers.falseInputFrom{
+    .DayPickerInput:first-child {
+        input:focus {
+            box-shadow: 0 0 0 3px rgba(255, 91, 60, 0.4);
+        }
+        border-color: $lipstick;
+    }
+}
+.InputFromTo .DayPicker-Day--selected:not(.DayPicker-Day--start):not(.DayPicker-Day--end):not(.DayPicker-Day--outside) {
+    background-color: #f0f8ff !important;
+    color: $sunflower-yellow;
+}
+.InputFromTo .DayPicker-Day {
+    border-radius: 0 !important;
+}
+.InputFromTo .DayPicker-Day--start {
+    border-top-left-radius: 50% !important;
+    border-bottom-left-radius: 50% !important;
+}
+.InputFromTo .DayPicker-Day--end {
+    border-top-right-radius: 50% !important;
+    border-bottom-right-radius: 50% !important;
+}
+.InputFromTo .DayPickerInput-Overlay {
+    width: 550px;
+}
+.InputFromTo-to .DayPickerInput-Overlay {
+    //margin-left: -198px;
+}
+

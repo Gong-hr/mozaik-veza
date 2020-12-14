@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css?family=Barlow:400,600&subset=latin-ext');
+//@import url('https://fonts.googleapis.com/css?family=Roboto:300,600&subset=cyrillic-ext,latin-ext');
+
+@import "variables";
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+.font-awesome-holder {
+    display: inline;
+}
+.form-control:focus {
+    border: none;
+    outline: none;
+    box-shadow: 0 0 0 3px $light-grey-five;
+}
+abbr[title], abbr[data-original-title] {
+    text-decoration: none;
+}
+.connection-type-abbr {
+    @include Text-Style-5-center-80 ;
+    font-size: 12px;
+    display: inline-block;
+    height: 16px;
+    width: 32px;
+    line-height: 15px;
+    margin-left: 12px;
+    float: left;
+    border-radius: 2px;
+    //opacity: 0.8;
+    //background-image: linear-gradient($white-two, $white-two);
+    //background-blend-mode: soft-light;
+}
+.connection-type-abbr.imo, .connection-type-abbr-round.imo {
+    background-color: rgba($coral, 0.8);
+}
+.connection-type-abbr.pos, .connection-type-abbr-round.pos {
+    background-color: rgba($periwinkle, 0.8);
+}
+.connection-type-abbr.pol, .connection-type-abbr-round.pol {
+    background-color: rgba($dodger-blue, 0.8);
+}
+.connection-type-abbr.obi, .connection-type-abbr-round.obi {
+    background-color: rgba($weird-green, 0.8);
+}
+.connection-type-abbr.int, .connection-type-abbr-round.int {
+    background-color: rgba($sunshine-yellow, 0.8);
+}
+.connection-type-abbr.grey, .connection-type-abbr-round.grey {
+    background-color: rgba($light-grey, 0.8);
+}
+.connection-type-abbr-round {
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+    border-radius: 8px;
+    margin-left: 12px;
+    @media (max-width: 339px) {
+        margin-left: 6px;
+    }
+    @media (max-width: 307px) {
+        margin-left: 2px;
+    }
+    float: left;
+}
+.IMO {
+    color: $coral;
+}
+.POS {
+    color: $periwinkle;
+}
+.POL {
+    color: $dodger-blue;
+}
+.OBI {
+    color: $weird-green;
+}
+.INT {
+    color: $sunshine-yellow;
+}
+.grey {
+    color: $light-grey;
+}
+
+.IMObackground, .coral {
+    background-color: $coral;
+}
+.POSbackground, .periwinkle {
+    background-color: $periwinkle;
+}
+.POLbackground, .dodger-blue {
+    background-color: $dodger-blue;
+}
+.OBIbackground, .weird-green {
+    background-color: $weird-green;
+}
+.INTbackground, .sunshine-yellow {
+    background-color: $sunshine-yellow;
+}
+.greybackground {
+    background-color: $light-grey;
+}
+//lijeva crta za veze
+.image-div {
+    position: absolute;
+    width: 12px;
+    height: 99%;
+    left: 0;
+    top: 0;
+    .crta {
+        position: absolute;
+        top: 2px;
+        bottom: 2px;
+        left: 3px;
+        width: 2px;
+        border-radius: 1px;
+    }
+    .krug {
+        position: absolute;
+        top: calc(50% - 4px);
+        left: 0;
+        height: 8px;
+        width: 8px;
+        border-radius: 4px;
+    }
+    img {
+        position: absolute;
+        width: 12px;
+        height: 100%;
+        left: 0;
+        object-fit: cover;
+    }
+}

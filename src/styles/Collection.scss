@@ -1,0 +1,59 @@
+@import "custom_bootstrap.scss";
+
+.Collection-container {
+    padding-top: 72px;
+    h1 {
+        @include Text-Style-3;
+        margin-bottom: 8px;
+    }
+    h2, .Collection-h2  p {
+        @include Text-Style-6-left;
+        margin-top: 16px;
+        margin-bottom: 32px;
+    }
+    .Collection-h2  p {
+        line-height: 1.5;
+        color: $black-60;
+    }
+    .Collection-Collapse {
+        .Collection-column {
+            border-top: 1px solid $light-grey-five;
+        }
+        .Collection-collapse-button {
+            width: 100%;
+            height: 48px;
+            padding: 8px 0;
+            border-radius: 0;
+            border: none;
+            background: none;
+            @include Text-Style-6-left-80-bold;
+        }
+        .Collection-collapse-button:hover, .Collection-collapse-button:active, .Collection-collapse-button:focus, .Collection-collapse-button:active:focus {
+            color: $black-80 !important;
+            border: none !important;
+            background: none !important;
+            box-shadow: none !important;
+            outline: none !important;
+        }
+        .card {
+            background: none;
+            border: none;
+            @include Text-Style-7;
+            line-height: 1.5;
+            .card-body {
+                padding: 8px 0 16px 0;
+                .Collection-Collapse-collection-div {
+                    //margin-left: 16px;
+                }
+                hr {
+                    border-top-color: $light-grey-five;
+                }
+                h2 {
+                    @include Text-Style-7-bold;
+                    margin-bottom: 8px;
+                    margin-top: 16px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,100 @@
+@import "custom_bootstrap.scss";
+
+.Entity-right-column-about {
+    text-align: left;
+    .Article-short {
+        min-height: 46px;
+    }
+    h1 {
+        @include Text-Style-bold;
+        font-size: 18px !important;
+        margin-bottom: 8px !important;
+        color: $black-80;
+        text-align: left;
+        text-transform: uppercase;
+        margin-top: 0;
+        line-height: 32px;
+    }
+    div p:last-child{
+        margin-bottom: 0;
+        font-size: 18px !important;
+    }
+    span {
+        font-size: 32px;
+        line-height: 1;
+        color: $sunflower-yellow;
+    }
+    .Entity-right-column-about-link {
+        margin-top: 12px;
+        a {
+            @include Text-Style-bold;
+            color: $lipstick;
+            text-align: left;
+            margin-bottom: 24px;
+            span {
+                color: $black-60;
+                font-size: 18px;
+                line-height: 1.5;
+                margin-left: 6px;
+            }
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+    .statistics {
+        color: $lipstick;
+        font-size: 32px;
+        .statistics-item {
+            padding: 4px 0;
+            height: 64px;
+            width: 100%;
+            & > div {
+                float: left;
+            }
+            &:after {
+                clear: both;
+            }
+        }
+        .statistics-text {
+            line-height: 1;
+            height: 64px;
+        }
+        .statistics-icon {
+            height: 56px;
+            width: 56px;
+            border-radius: 28px;
+            background-color: $light-grey-five;
+            color: $black-60;
+            padding-top: 10px;
+            font-size: 24px;
+            text-align: center;
+            margin-right: 16px;
+        }
+        span {
+            color: $black-60;
+            font-size: 18px;
+            position: relative;
+            top: -10px;
+        }
+    }
+}
+.Entity-right-column-inner-div {
+    max-width: 384px;
+    min-width: calc(100% - 20px);
+    float: right;
+    @include media-breakpoint-down(sm) {
+        float: none;
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 24px;
+    }
+    border-top: solid 4px $sunflower-yellow;
+    border-left: solid 1px $light-grey;
+    border-bottom: solid 1px $light-grey;
+    border-right: solid 1px $light-grey;
+    border-radius: 2px;
+    padding: 24px;
+    margin-bottom: 24px;
+}

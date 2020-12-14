@@ -1,0 +1,267 @@
+$grid-gutter-width: 32px;
+$gridColumnWidth: 80px;
+$grid-breakpoints: (
+        xs: 0,
+        sm: 480px,
+        md: 768px,
+        lg: 1024px,
+        xl: 1400px
+);
+$container-max-widths: (sm: 540px, md: 720px, lg: 960px, xl: 1312px);
+
+$black-40: rgba(0, 0, 0, 0.4);
+$black-60: rgba(0, 0, 0, 0.6);
+$black-80: rgba(0, 0, 0, 0.8);
+$black-20: rgba(0, 0, 0, 0.2);
+$sunshine-yellow: #ffeb30;
+$weird-green: #2be84e;
+$dodger-blue: #3cadff;
+$periwinkle: #9f6eff;
+$coral: #ff5b3c;
+$white: #fafaf8;
+$light-grey: #e8e7de;
+$sunflower-yellow: #f6da00;
+$lipstick: #e0303e;
+$light-grey-two: #f9f8f4;
+$purple-brown: #292425;
+$white-80: rgba(255, 255, 255, 0.8);
+$white-two: #ffffff;
+$white-60: rgba(255, 255, 255, 0.6);
+$white-40: rgba(255, 255, 255, 0.4);
+$white-20: rgba(255, 255, 255, 0.2);
+$light-grey-three: #d5d3c3;
+$light-grey-four: #deddd0;
+$light-grey-five: #f1f0eb;
+
+$body-bg: $white-two;
+$body-color: $black-80;
+$font-family-sans-serif: 'Barlow', 'Roboto', sans-serif;
+
+@mixin Text-Style {
+    font-family: $font-family-sans-serif;
+    font-size: 18px;
+    line-height: 1.33;
+    text-align: left;
+    color: $black-80;
+}
+
+@mixin Text-Style-bold {
+    @include Text-Style;
+    font-weight: bold;
+}
+
+@mixin Text-Style-60 {
+    @include Text-Style;
+    color: $black-60;
+}
+
+@mixin Text-Style-40 {
+    @include Text-Style;
+    color: $black-40;
+}
+
+@mixin Text-Style-bold-60 {
+    @include Text-Style-bold;
+    color: $black-60;
+}
+
+@mixin Text-Style-2 {
+    font-family: $font-family-sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 1;
+    text-align: left;
+    color: $black-60;
+}
+
+@mixin Text-Style-2-center {
+    @include Text-Style-2;
+    text-align: center;
+}
+
+@mixin Text-Style-2-not-bold {
+    @include Text-Style-2;
+    font-weight: normal;
+}
+
+@mixin Text-Style-2-not-bold-80 {
+    @include Text-Style-2-not-bold;
+    color: $black-80;
+}
+
+@mixin Text-Style-3 {
+    font-family: $font-family-sans-serif;
+    font-size: 48px;
+    font-weight: bold;
+    line-height: 1;
+    text-align: left;
+    color: $black-80;
+}
+
+@mixin Text-Style-3-center {
+    @include Text-Style-3;
+    text-align: center;
+}
+
+@mixin Text-Style-4 {
+    font-family: $font-family-sans-serif;
+    font-size: 32px;
+    font-weight: bold;
+    line-height: 1.5;
+    text-align: left;
+    color: $black-80;
+}
+
+@mixin Text-Style-4-center {
+    @include Text-Style-4;
+    text-align: center;
+}
+
+@mixin Text-Style-5 {
+    font-family: $font-family-sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.5;
+    text-align: left;
+    color: $black-60;
+}
+
+@mixin Text-Style-5-right {
+    @include Text-Style-5;
+    text-align: right;
+}
+
+@mixin Text-Style-5-not-bold {
+    @include Text-Style-5;
+    font-weight: normal;
+}
+
+@mixin Text-Style-5-not-bold-262626 {
+    @include Text-Style-5-not-bold;
+    color: #262626;
+}
+
+@mixin Text-Style-5-not-bold-40 {
+    @include Text-Style-5-not-bold;
+    color: $black-40;
+}
+
+@mixin Text-Style-5-80 {
+    @include Text-Style-5;
+    color: $black-80;
+}
+@mixin Text-Style-5-not-bold-80 {
+    @include Text-Style-5;
+    color: $black-80;
+    font-weight: normal;
+}
+
+@mixin Text-Style-5-center-80 {
+    @include Text-Style-5;
+    text-align: center;
+    color: $black-80;
+}
+
+@mixin Text-Style-6 {
+    font-family: $font-family-sans-serif;
+    font-size: 21px;
+    font-weight: normal;
+    line-height: 1;
+    text-align: center;
+    color: $black-40;
+}
+
+@mixin Text-Style-6-left {
+    @include Text-Style-6;
+    text-align: left;
+}
+
+@mixin Text-Style-6-left-60 {
+    @include Text-Style-6-left;
+    color: $black-60;
+}
+
+@mixin Text-Style-6-left-red {
+    @include Text-Style-6-left;
+    color: $lipstick;
+}
+
+@mixin Text-Style-6-left-80-bold {
+    font-family: $font-family-sans-serif;
+    font-size: 21px;
+    font-weight: bold;
+    line-height: 1;
+    text-align: left;
+    color: $black-80;
+}
+
+@mixin Text-Style-6-left-80-30 {
+    font-family: $font-family-sans-serif;
+    font-size: 21px;
+    font-weight: normal;
+    line-height: 1.5;
+    text-align: left;
+    color: $black-80;
+}
+
+@mixin Text-Style-7 {
+    font-family: $font-family-sans-serif;
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 1;
+    text-align: left;
+    color: $black-60;
+}
+
+@mixin Text-Style-7-lipstick {
+    @include Text-Style-7;
+    color: $lipstick;
+}
+
+@mixin Text-Style-7-80 {
+    @include Text-Style-7;
+    color: $black-80;
+}
+
+@mixin Text-Style-7-40 {
+    @include Text-Style-7;
+    color: $black-40;
+}
+
+@mixin Text-Style-7-80-center {
+    @include Text-Style-7-80;
+    text-align: center;
+}
+
+@mixin Text-Style-7-bold {
+    @include Text-Style-7;
+    font-weight: bold;
+}
+
+@mixin Text-Style-8 {
+    font-family: $font-family-sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 14px;
+    text-align: left;
+    color: $black-80;
+}
+
+@mixin Text-Style-9 {
+    font-family: $font-family-sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.5;
+    text-align: left;
+    color: $black-40;
+}
+
+@mixin Text-Style-9-60 {
+    @include Text-Style-9;
+    color: $black-60;
+}
+
+@mixin Text-Style-9-80 {
+    @include Text-Style-9;
+    color: $black-80;
+}

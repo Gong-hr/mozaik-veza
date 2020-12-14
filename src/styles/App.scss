@@ -1,0 +1,557 @@
+@import "custom_bootstrap.scss";
+
+body {
+    @include Text-Style;
+    min-width: 320px;
+}
+
+#root {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1 {
+}
+input[type="search"]::-webkit-search-cancel-button{
+    display: none
+}
+input[type="search"]::-ms-clear{
+    margin-right:20px
+}
+.LoadingBar {
+    background-color: $sunflower-yellow;
+    height: 4px;
+    position: absolute;
+}
+.Filter .LoadingBar {
+    z-index: 1;
+}
+
+.divider {
+    width: 1px;
+    height: 96px;
+    background-color: $light-grey;
+}
+
+.page404 {
+    h2 {
+        margin-top: 100px;
+        margin-bottom: 200px;
+        font-weight: bold !important;
+        color: rgba(0, 0, 0, 0.8) !important;
+        text-transform: uppercase;
+        font-size: 21px;
+        @include media-breakpoint-down(sm) {
+            font-size: 18px !important;
+        }
+        @include media-breakpoint-down(md) {
+            text-align: center !important;
+        }
+    }
+    a, a:hover, a:visited, a:active, a:focus {
+        color: $lipstick;
+        h3 {
+            margin-top: -150px;
+            text-transform: uppercase;
+            font-size: 21px;
+            font-weight: bold !important;
+            @include media-breakpoint-down(sm) {
+                font-size: 18px !important;
+            }
+        }
+    }
+}
+
+.App-logo {
+    //animation: none !important;
+    height: 48px !important;
+    width: 220px !important;
+    //min-width: 100%;
+}
+.App-logo-sm {
+    animation: none !important;
+    min-height: 42px;
+    margin-left: 16px;
+    min-width: 100%;
+}
+
+.App-Header {
+    background-color: $light-grey-two;
+    height: 96px;
+    @include media-breakpoint-down(md) {
+        height: 56px;
+    }
+    font-weight: bold;
+    padding: 24px;
+    //border-bottom: 1px solid $light-grey-four;
+    & > div > a {
+        min-height: 48px;
+        min-width: 100%;
+        @include media-breakpoint-down(lg) {
+            min-height: 42px;
+            min-width: 100%;
+        }
+    }
+    h1 {
+        font-size: 24px;
+        color: $purple-brown;
+        letter-spacing: 2.4px;
+        line-height: 2;
+        text-transform: uppercase;
+    }
+    button {
+        background-color: $light-grey;
+        border: none;
+        width: 24px;
+        height: 24px;
+        color: $black-60;
+        font-size: 24px;
+        font-weight: 400;
+    }
+    .App-Header-profil {
+        .horizontal-line {
+            height: 96px;
+            width: 1px;
+            background-color: $light-grey;
+            position: absolute;
+            right: 312px;
+            top: -24px;
+        }
+        span {
+            line-height: 48px;
+        }
+    }
+    .App-Header-links {
+        ul {
+            margin: 0;
+        }
+        a {
+            @include Text-Style;
+            text-align: right;
+            @include media-breakpoint-down(sm) {
+                text-align: center;
+            }
+            @include media-breakpoint-up(lg) {
+                margin-left: 12px;
+            }
+            float: right;
+            a:hover {
+
+            }
+        }
+    }
+    .App-Header-profil {
+        @include media-breakpoint-down(sm) {
+            display: none !important;
+        }
+        .dropdown, .dropdown.show, .dropdown:hover, .dropdown:active, .dropdown:focus, .dropdown:active:focus {
+            width: 128px;
+            height: 48px;
+            border-radius: 2px;
+            background-color: $light-grey;
+            text-align: left;
+            @include media-breakpoint-up(lg) {
+                margin-left: 12px;
+            }
+            @include media-breakpoint-up(xl) {
+                margin-left: 24px;
+            }
+            button, button:active, button:hover, button:focus, button:active:focus {
+                font-size: 18px !important;
+                color: $black-80 !important;
+                font-weight: bold !important;
+                background-color: transparent !important;
+                box-shadow: none !important;
+                border: none !important;
+                outline: none !important;
+                padding-top: 0;
+                width: 128px;
+                height: 48px;
+                span {
+                    color: $black-60 !important;
+                    font-size: 21px !important;
+                    margin-left: 8px;
+                }
+            }
+            .dropdown-toggle::after { //strelica
+                color: $black-40 !important;
+                margin-left: 12px;
+            }
+            .dropdown-menu {
+                font-size: 18px !important;
+                color: $black-80 !important;
+                box-shadow: 0 4px 8px 0 $black-20;
+                border: none !important;
+                outline: none !important;
+                background-color: white !important;
+                //margin-top: 24px;
+                button {
+                    width: 100% !important;
+                    padding: 0 !important;
+                }
+                button:hover {
+                    background-color: $light-grey-five !important;
+                    width: 100%;
+                }
+                a, a:hover, a:focus, a:active, button, button:hover, button:focus, button:active, button:active:focus {
+                    font-weight: normal !important;
+                    color: $black-80;
+                    text-decoration: none;
+                    height: 42px;
+                    display: block;
+                    padding-top: 8px;
+                    padding-left: 24px;
+                    padding-right: 24px;
+                }
+            }
+            .logout-sm-button {
+                margin: 0;
+                position: relative;
+                top: -4px;
+                padding-left: 24px;
+                padding-right: 24px;
+                span {
+                    color: $black-60;
+                    font-size: 16px;
+                }
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+    nav {
+        box-shadow: 0 1px 0 0 $light-grey-four;
+        z-index: 20;
+        font-weight: normal;
+        font-size: 18px;
+        .nav-item {
+            &:hover {
+                background-color: $light-grey;
+            }
+            & > a > div {
+                text-align: left;
+                padding: 8px 24px;
+            }
+            a {
+                color: $black-80;
+            }
+            a:hover {
+                text-decoration: none;
+            }
+            .signup, .login {
+                font-weight: bold;
+                div {
+                    text-align: center;
+                }
+                float: left;
+                width: 128px;
+                height: 48px;
+                border-radius: 2px;
+                padding: 4px 0;
+                margin: 8px 24px 24px 24px;
+                display: block;
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+            .signup {
+                background-color: $light-grey;
+                div {
+                    padding: 8px 17px;
+                }
+            }
+            .login {
+                border: solid 1px $light-grey;
+            }
+        }
+        .nav-item.signup-nav-item {
+            &:hover {
+                background-color: transparent;
+            }
+        }
+    }
+    nav.navbar {
+        padding: 0;
+        .navbar-toggler {
+            margin: 4px 16px;
+            height: 56px;
+            width: 56px;
+        }
+        .navbar-brand {
+            @include media-breakpoint-down(sm) {
+            }
+            @media (max-width: 360px) {
+            }
+            @media (max-width: 360px) {
+                max-width: calc(100% - 120px) !important;
+            }
+        }
+    }
+    nav.bg-light {
+        background-color: $light-grey-two !important;
+    }
+    .navbar-toggler {
+        padding: 0;
+        background-color: transparent;
+        &:active, &:hover, &:focus, &:active:focus {
+            outline: none;
+        }
+        @media (max-width: 360px) {
+            .navbar-toggler-icon {
+                height: 36px;
+                width: 36px;
+            }
+        }
+    }
+    .navbar-collapse {
+        border-top: 1px solid $light-grey-four;
+        padding-top: 16px;
+        padding-bottom: 16px;
+    }
+    .navbar-sm-profile {
+        font-size: 18px;
+        font-weight: bold;
+        margin: 8px 24px;
+        text-align: left;
+        span {
+            color: $black-60;
+            font-size: 16px;
+            position: relative;
+            bottom: 1px;
+        }
+    }
+    .logout-sm-button {
+        text-align: left;
+        margin-bottom: 8px;
+        cursor: pointer;
+        display: block;
+        margin-left: 24px;
+        margin-top: 8px;
+        span {
+            color: $black-60;
+            font-size: 16px;
+            position: relative;
+            bottom: 1px;
+        }
+    }
+    .button-sm-close-navbar {
+        margin: 4px 16px;
+        height: 56px;
+        width: 48px;
+        cursor: pointer;
+        padding-top: 10px;
+        span {
+            font-size: 24px;
+            color: $black-60;
+        }
+    }
+}
+
+.menuToggler {
+    margin: 4px 16px;
+    height: 56px;
+    font-size: 24px;
+    color: $black-60;
+    right: 12px;
+    padding-top: 10px;
+    width: 48px;
+    cursor: pointer;
+}
+
+#Header-Button-SignUp {
+    @include Text-Style-7-80-center;
+    font-weight: 600;
+    float: left;
+    width: 128px;
+    height: 48px;
+    border-radius: 2px;
+    background-color: $light-grey;
+    margin-left: 16px;
+    vertical-align: middle;
+}
+
+#Header-Button-Login {
+    @include Text-Style-7-80-center;
+    font-weight: 600;
+    float: left;
+    width: 88px;
+    height: 48px;
+    border-radius: 2px;
+    border: solid 1px $light-grey;
+    margin-left: 8px;
+    vertical-align: middle;
+}
+
+#center-div {
+    height: auto;
+    min-height: calc(100vh - 408px);//header 96px, footer: 312px
+    @include media-breakpoint-down(lg) {
+        min-height: calc(100vh - 428px);//header 96px, footer: 332px
+    }
+    @include media-breakpoint-down(md) {
+        min-height: calc(100vh - 456px);//header 56px, footer: 400px
+    }
+    @include media-breakpoint-down(sm) {
+        min-height: calc(100vh - 670px);//header 56px, footer: 614px
+    }
+    @include media-breakpoint-down(xs) {
+        min-height: calc(100vh - 718px);//header 56px, footer: 662px
+    }
+    //min-height: 100vh;
+    //min-height: 200px;
+    & > .col-sm-12 {
+        padding: 0;
+    }
+}
+
+.displayNone {
+    display: none;
+}
+
+.App-Footer {
+    //height: 220px;
+    background-color: $light-grey-two;
+    box-shadow: 0 4px 2px 0 rgba(0, 0, 0, 0.1) inset;
+    footer {
+        a {
+            @include Text-Style-5;
+            font-size: 14px;
+        }
+        .footer-links-col {
+            padding: 0;
+            border-bottom: 1px solid $black-20;
+            @include media-breakpoint-down(sm) {
+                padding-bottom: 24px;
+            }
+        }
+        .footer-logo {
+            @include Text-Style-5-not-bold;
+            margin-top: 26px;
+            margin-bottom: 24px;
+            display: inline-block;
+            float: left;
+            @include media-breakpoint-down(sm) {
+                margin-top: 0px;
+                margin-bottom: 6px;
+                text-align: center;
+            }
+        }
+        .footer-links {
+            @include Text-Style-5-not-bold;
+            @include media-breakpoint-down(sm) {
+                float: none;
+                text-align: center;
+                margin-top: 4px;
+            }
+            a {
+                margin-left: 12px;
+                @include media-breakpoint-down(md) {
+                    margin-left: 6px;
+                }
+            }
+            a:first-child {
+                margin-left: 0;
+            }
+            &:last-child {
+                clear: both;
+            }
+        }
+        .footer-back-to-top {
+            @include Text-Style-5;
+            margin-top: 17px;
+            margin-bottom: 15px;
+            float: right;
+            @include media-breakpoint-down(sm) {
+                margin-top: 24px;
+                margin-bottom: 16px;
+                width: 100%;
+                text-align: center;
+            }
+            button.scroll, button.scroll:active, button.scroll:focus, button.scroll:active:focus  {
+                background: none;
+                border: none;
+                outline: none;
+                cursor: pointer;
+                span {
+                    @include Text-Style-5;
+                    @include media-breakpoint-down(md) {
+                        font-size: 14px;
+                    }
+                }
+                .font-awesome-holder {
+                    display: inline-block;
+                    width: 40px;
+                    height: 40px;
+                    background-color: $sunflower-yellow;
+                    border-radius: 20px;
+                    text-align: center;
+                    padding-top: 8px;
+                    @include media-breakpoint-down(md) {
+                        padding-top: 9px;
+                    }
+                }
+                @include media-breakpoint-down(md) {
+                    span {
+                        display: none;
+                    }
+                    span.font-awesome-holder {
+                        display: block;
+                    }
+                }
+            }
+        }
+        .development {
+            margin-top: 32px;
+            margin-bottom: 32px;
+            color: $black-20;
+        }
+        .eu {
+            img {
+                height: 46px;
+                margin-right: 16px;
+                float: left;
+            }
+            span {
+                display: block;
+                font-size: 10px;
+                text-align: left;
+                color: #003ea1;
+                height: 40px;
+                margin-top: 24px;
+            }
+            .eu-img {
+                @include media-breakpoint-down(sm) {
+                    margin: auto;
+                    width: 280px;
+                }
+            }
+        }
+        .eu-text {
+            text-align: left;
+            @include media-breakpoint-down(sm) {
+                text-align: center;
+            }
+        }
+        .gong {
+            .gong-img {
+                @include media-breakpoint-down(sm) {
+                    margin: auto;
+                    width: 197px;
+                }
+                img {
+                    height: 64px;
+                    margin-top: 24px;
+                    margin-right: 16px;
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                    float: left;
+                    @include media-breakpoint-down(sm) {
+                        height: 48px;
+                    }
+                }
+            }
+        }
+    }
+}

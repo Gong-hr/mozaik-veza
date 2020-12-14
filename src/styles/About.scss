@@ -1,0 +1,24 @@
+@import "custom_bootstrap.scss";
+
+.About-div {
+    .About-column {
+        h1{
+            @include Text-Style-3;
+            margin-top: 72px;
+            margin-bottom: 6px;
+        }
+        h2 {
+            @include Text-Style-3;
+            margin-top: 72px;
+            letter-spacing: -0.5px;
+            margin-bottom: 10px;
+        }
+        p {
+            @include Text-Style-7;
+            line-height: 1.5;
+        }
+        .main_div p {
+            @include Text-Style-6-left-80-30;
+        }
+    }
+}

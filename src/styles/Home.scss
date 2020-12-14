@@ -1,0 +1,271 @@
+@import "custom_bootstrap.scss";
+
+.hidden {
+    display: none;
+}
+.Header-div {
+    position: absolute;
+    display: block;
+    margin-left: 12px;
+    width: 130px;
+    right: 320px;
+    top: 34px;
+    a, a:hover {
+        @include Text-Style-5-80;
+    }
+    a:hover {
+        text-decoration: none;
+    }
+}
+.Home-container {
+    @include Text-Style-2-not-bold;
+    @include media-breakpoint-down(sm) {
+        font-size: 18px;
+    }
+    text-align: center;
+
+    .Home-row {
+        padding-bottom: 112px;
+        padding-top: 112px;
+        @include media-breakpoint-down(sm) {
+            padding-bottom: 56px;
+            padding-top: 56px;
+        }
+        h1 {
+            @include Text-Style-3-center;
+            margin-bottom: 12px;
+            @include media-breakpoint-down(sm) {
+                font-size: 32px;
+            }
+        }
+        h2 {
+            @include Text-Style-4-center;
+            margin-top: 24px;
+            @include media-breakpoint-down(sm) {
+                font-size: 18px;
+            }
+        }
+        h3, .Home-h3 .Home-h3-div p {
+            @include Text-Style-2-not-bold;
+            @include media-breakpoint-down(sm) {
+                font-size: 20px;
+            }
+            text-align: center;
+            margin-bottom: 42px;
+            line-height: 1.5;
+        }
+        p {
+            @include Text-Style;
+            text-align: center;
+            line-height: 1.5;
+            @include media-breakpoint-down(sm) {
+                font-size: 16px;
+            }
+        }
+        &.Home-search-row {
+            .search-block {
+                position: relative;
+                z-index: 1;
+                .search-div {
+                    position: relative;
+                    height: 65px;
+                    @include Text-Style-2;
+                    //box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+                    border: solid 1px $light-grey;
+                    border-radius: 2px;
+                    input {
+                        @include Text-Style-2-not-bold-80;
+                        border: none;
+                        width: 100%;
+                        padding-left: 24px;
+                        padding-right: 64px;
+                        height: 63px;
+                        border-radius: 1px;
+                        &:focus {
+                            outline: none;
+                            //box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+                            box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+                        }
+                        &::placeholder {
+                            @include media-breakpoint-down(sm) {
+                                color: white;
+                                //font-size: 18px;
+                            }
+                        }
+                    }
+                    .search-button {
+                        @include Text-Style-2;
+                        position: absolute;
+                        top: 2px;
+                        right: 2px;
+                        bottom: 2px;
+                        width: 58px;
+                        padding: 17px;
+                        background: none;
+                        border: none;
+                        cursor: pointer;
+                        border-radius: 0;
+                        &:focus {
+                            outline-color: $light-grey;
+                        }
+                    }
+                }
+                ul {
+                    position: absolute;
+                    background-color: $white-two;
+                    border: solid 1px $light-grey;
+                    width: 100%;
+                    padding-left: 0;
+                    z-index: 10;
+                    margin-top: -1px;
+                    @include Text-Style-5-not-bold;
+                    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+                    list-style-type: none;
+                    li {
+                        height: 32px;
+                        text-align: left;
+                        padding: 4px 16px;
+                        div {
+                            display: inline-block;
+                            width: 20px;
+                            margin-right: 6px;
+                            text-align: center;
+                            position: relative;
+                            top: -5px;
+                        }
+                        div.Search-name {
+                            width: 432px;
+                            top: 0;
+                            @include media-breakpoint-down(lg) {
+                                width: 260px;
+                            }
+                            @include media-breakpoint-down(sm) {
+                                width: 320px;
+                                max-width: calc(100% - 160px);
+                            }
+                            @include media-breakpoint-down(xs) {
+                                max-width: calc(100% - 60px);
+                            }
+                            //margin: 0 0 -6px 0;
+                            text-align: left;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                        }
+                        div.Autocomplete-personType {
+                            top: 0;
+                            float: right;
+                            width: auto;
+                            margin: 0;
+                            color: $black-20;
+                            font-size: 14px;
+                            @include media-breakpoint-only(xs) {
+                                display: none;
+                            }
+                        }
+                        a, a:hover, a:active, a:focus {
+                            @include Text-Style-5-not-bold;
+                            color: $black-60;
+                            text-decoration: none;
+                            width: 100%;
+                            display: block;
+                        }
+                        &:hover {
+                            background-color: rgba(224, 48, 62, 0.2);
+                            //font-weight: bold;
+                            div {
+                                color: $lipstick;
+                            }
+                            div.Search-name {
+                                color: $black-80;
+                            }
+                            div.Autocomplete-personType {
+                                color: $black-20;
+                            }
+                        }
+                    }
+                }
+            }
+            .Home-search-common {
+                margin-top: 40px;
+                p {
+                    @include Text-Style-6;
+                    font-size: 21px;
+                    line-height: 32px;
+                    text-align: center;
+                    margin-bottom: 6px;
+                }
+                .Home-search-common-p-red {
+                    @include Text-Style-2-center;
+                    color: $lipstick;
+                    a, a:hover, a:active {
+                        color: $lipstick;
+                    }
+                    svg {
+                        color: $black-20;
+                        margin-left: 8px;
+                    }
+                }
+            }
+        }
+        &.Home-about-row {
+            img {
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+                border-radius: 3px;
+            }
+            a:focus {
+                outline: none;
+            }
+            a:hover {
+                text-decoration: none;
+            }
+            .Home-about-row-videos {
+                padding: 24px 0px;
+                color: $lipstick;
+                font-weight: bold;
+                .Home-about-row-videos-div {
+                    padding-bottom: 24px;
+                    .Home-about-row-videos-about {
+                        display: inline-block;
+                        &:hover {
+                            cursor: pointer;
+                        }
+                    }
+                    .Home-about-row-videos-howTo {
+                        margin-left: 24px;
+                        display: inline-block;
+                        &:hover {
+                            cursor: pointer;
+                        }
+                    }
+                }
+                hr {
+                    border-color: $light-grey-four;
+                }
+            }
+        }
+        &.Home-howto-row {
+            .Home-howto-example {
+                @include Text-Style-2-not-bold;
+                line-height: 2;
+                color: $lipstick;
+                text-align: center;
+                .long-arrow-right {
+                    color: $black-60;
+                    margin-left: 8px;
+                }
+            }
+        }
+    }
+
+}
+
+.Home-container-gray {
+    background-color: $light-grey-two;
+    //box-shadow: 0 -4px 2px 0px rgba(0, 0, 0, 0.1);
+}
+
+.Home-container-yellow {
+    background-color: $sunflower-yellow;
+    background-image: linear-gradient(to top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.2));
+}
